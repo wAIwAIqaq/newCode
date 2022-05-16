@@ -6,7 +6,6 @@ while (i < num) {
   let sub = 0;
   const arr = new Array(num - i);
   let f = ((1 + num) * num) / 2 - i;
-  console.log(f);
   let j = 0;
   while (j < num - i) {
     f = f - sub;
