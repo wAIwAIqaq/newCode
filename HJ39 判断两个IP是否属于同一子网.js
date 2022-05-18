@@ -6,7 +6,7 @@ const child = readline()
     if ((flag && parseInt(item) < 0) || parseInt(item) > 255) {
       flag = false;
     }
-    childStr += `${parseInt(item).toString(2)}`;
+    childStr += `${parseInt(item).toString(2).padStart(8, "0")}`;
     return parseInt(item);
   });
 //  判断子网合法
