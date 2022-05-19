@@ -11,7 +11,7 @@ function maxlenEqualK(arr, k) {
   const sumArr = arr.map((item) => {
     return (itemSum += item);
   });
-  // 转化为 求t两数之差 = -k
+  // 转化为 求t两数之差 = k
   const map = new Map();
   console.log(sumArr);
   sumArr.forEach((item, index) => {
