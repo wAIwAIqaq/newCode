@@ -1,13 +1,13 @@
-const input = readline();
-let num = input;
-let index = 2;
-let res = "";
-while (index <= num && index ^ (2 <= num)) {
-  while (num % index === 0) {
-    res += `${index} `;
-    num /= index;
+let num = parseInt(readline());
+const arr = [];
+let i = 2;
+while (i < num && Math.pow(i, 2) <= num) {
+  if (num % i == 0) {
+    num = num / i;
+    arr.push(i);
+    i = 1;
   }
-  index++;
+  i++;
 }
-if (num > 1) res += `${num} `;
-console.log(res);
+arr.push(num);
+console.log(arr.join(" "));
