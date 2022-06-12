@@ -23,13 +23,12 @@ function oddEvenList(head) {
       let val = new ListNode(head.val);
       oddList.next = val;
       oddList = oddList.next;
-      flag = !flag;
     } else {
       let val = new ListNode(head.val);
       evenList.next = val;
       evenList = evenList.next;
-      flag = !flag;
     }
+    flag = !flag;
     head = head.next;
   }
   oddList.next = evenRes.next;

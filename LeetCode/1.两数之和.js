@@ -6,12 +6,14 @@
 // [3, 2, 4]
 // 6
 var twoSum = function (nums, target) {
-  const res = [];
+  const map = new Map();
+  nums.forEach((item, index) => {
+    map.set(item, index);
+  });
   for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] === target - nums[j]) {
-        res.push(i, j);
-        return res;
+    if (map.get(target - nums[i])) {
+      if (i !== map.get(target - nums[i])) {
+        return [i, map.get(target - nums[i])];
       }
     }
   }
