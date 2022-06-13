@@ -14,6 +14,7 @@ var findSubstring = function (s, words) {
     if (hasAllWords(curStr.split(""), [...words])) {
       res.push(i);
     }
+    t;
     j++;
     i++;
   }
