@@ -21,9 +21,4 @@ function permute(nums) {
   }
   return res;
 }
-permute([1, 2, 3, 4 , 5, 6]);
-          cur            nums
-         [1,2,3]        [4,5,6];
-i = 0    [1,2,3,4]      [5,6]      delete 4
-i = 1    [1,2,3,5]      [4,6]      delete 5
-i = 2    [1,2,3,6]      [4,5]      delete 6
+// permute([1, 2, 3, 4 , 5, 6]);

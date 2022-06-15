@@ -16,7 +16,7 @@ while (i < arr.length) {
   }
   i++;
 }
-if (val1 == 0 && val2 == 0) {
+if (val1 == 0 && val2 == 0 && sub == 0) {
   flag = true;
 }
 arr = arr.filter((item) => {
