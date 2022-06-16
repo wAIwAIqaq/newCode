@@ -18,7 +18,6 @@ function isEqual(rest, threeArr = [], fiveArr = []) {
   if (rest.length != 0) {
     const cur = rest[0];
     const nextRest = rest.slice(1, rest.length);
-
     threeArr.push(cur);
     isEqual(nextRest, [...threeArr], [...fiveArr]);
     threeArr.pop();
