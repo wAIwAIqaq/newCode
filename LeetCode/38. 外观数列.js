@@ -9,19 +9,12 @@ var countAndSay = function (n) {
   return toExplain(countAndSay(n - 1));
 };
 function toExplain(str) {
-  let i = 0;
-  let pre = str[0];
-  let count = 0;
-  let res = "";
-  while (i <= str.length) {
-    if (str[i] != pre) {
-      res += `${count}${pre}`;
-      count = 1;
-    } else {
-      count++;
-    }
-    pre = str[i];
-    i++;
-  }
-  return res;
+  const reg = /(\d)\1*/g;
+  const arr = str.match(reg);
+  return arr
+    .map((item) => {
+      return `${item.length}${item[0]}`;
+    })
+    .join();
 }
+countAndSay(5);
