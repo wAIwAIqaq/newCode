@@ -10,7 +10,7 @@ var nextPermutation = function (nums) {
     }
     if (i >= 0) {
       let j = nums.length - 1;
-      while (j > i && nums[i] >= nums[j]) {
+      while (nums[i] >= nums[j]) {
         j--;
       }
       [nums[i], nums[j]] = [nums[j], nums[i]];
