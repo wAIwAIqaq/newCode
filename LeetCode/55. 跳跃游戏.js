@@ -3,11 +3,18 @@
  * @return {boolean}
  */
 var canJump = function (nums) {
-  const arr = nums.findIndex((item) => {
-    if (item == 0) {
-      return true;
+  let i = nums.length - 2;
+  let n = 1;
+  while (i >= 0) {
+    if (nums[i] >= n) {
+      n = 1;
+    } else {
+      n++;
     }
-  });
-  console.log(arr);
+    if (i == 0 && n > 1) {
+      return false;
+    }
+    i--;
+  }
+  return true;
 };
-canJump([3, 2, 1, 0, 4, 0]);
