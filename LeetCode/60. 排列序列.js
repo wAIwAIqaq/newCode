@@ -11,23 +11,35 @@ var getPermutation = function (n, k) {
     i++;
   }
   // dfs
-  const list = [];
-  getArr(arr, []);
+  let result = "";
+  let count = 0;
+  return getArr(arr, []);
   function getArr(rest, res) {
     if (res.length == n) {
-      list.push(res);
-      return;
+      return res.join("");
     }
     let i = 0;
     while (i < rest.length) {
+      const leafCount = getLeafCount(rest.length - 1);
+      if (count + leafCount < k) {
+        count += leafCount;
+        i++;
+        continue;
+      }
       const tempArr = rest.slice();
       res.push(tempArr[i]);
       tempArr.splice(i, 1);
-      getArr(tempArr, [...res]);
-      res.pop();
-      i++;
+      return getArr(tempArr, [...res]);
     }
   }
-  return list[k - 1].join("");
 };
-getPermutation(3, 3);
+function getLeafCount(n) {
+  let i = 1;
+  let res = 1;
+  while (i < n + 1) {
+    res *= i;
+    i++;
+  }
+  return res;
+}
+console.log(getPermutation(4, 9));
