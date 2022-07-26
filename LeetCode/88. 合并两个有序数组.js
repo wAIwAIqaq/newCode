@@ -13,4 +13,4 @@ var merge = function (nums1, m, nums2, n) {
     i++;
   }
   nums1.sort((a, b) => a - b);
-};
+} ;
